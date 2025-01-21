@@ -12,11 +12,11 @@ jobs:
         with:
           fetch-depth: 0
       - name: 🏗 Set up Python 3.9.21
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
           python-version: 3.9.21
       - name: 🏗 Set up Node 14
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: '14'
       - name: 🏗 Install build dependencies
