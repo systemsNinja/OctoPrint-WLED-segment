@@ -14,7 +14,7 @@ jobs:
       - name: 🏗 Set up Python 3.9.21
         uses: actions/setup-python@v4
         with:
-          python-version: 3.9.21
+          python-version: 3.9
       - name: 🏗 Set up Node 14
         uses: actions/setup-node@v3
         with:
@@ -58,17 +58,8 @@ jobs:
       - name: 🚚 Rename to release.zip
         run: |
           cp dist/sdist.zip release.zip
-      - name: 🥅 Catch release ID
-        id: get_release
-        uses: bruceadams/get-release@v1.2.2
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-      - name: 📦 Attach release artifact
-        uses: actions/upload-release-asset@v1
+      - name: 🥅 Upload asset with GitHub CLI
+        run: |
+          gh release upload "${{ github.event.release.tag_name }}" release.zip
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.get_release.outputs.upload_url }}
-          asset_path: release.zip
-          asset_name: release.zip
-          asset_content_type: application/zip
