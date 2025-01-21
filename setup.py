@@ -13,7 +13,7 @@ except:
 import versioneer
 
 # The plugin's identifier, has to be unique
-plugin_identifier = "wled-segment"
+plugin_identifier = "wled"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
 plugin_package = "octoprint_wled"
