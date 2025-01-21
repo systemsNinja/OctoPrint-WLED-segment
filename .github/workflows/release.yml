@@ -35,11 +35,11 @@ jobs:
       - name: 🔨 Build a source zip
         run: |
           python setup.py sdist --formats=zip
-      - name: 🚚 rename to sdist.zip
+      - name: 🚚 Rename to sdist.zip
         run: |
           mv dist/OctoPrint-WLED-*.zip dist/sdist.zip
       - name: ⬆ Upload build result
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact@v3
         with:
           name: dist
           path: dist
@@ -51,7 +51,7 @@ jobs:
       - build
     steps:
       - name: ⬇ Download build result
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact@v3
         with:
           name: dist
           path: dist
