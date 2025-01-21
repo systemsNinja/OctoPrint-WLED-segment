@@ -16,7 +16,7 @@ import versioneer
 plugin_identifier = "wled-segment"
 
 # The plugin's python package, should be "octoprint_<plugin identifier>", has to be unique
-plugin_package = "octoprint_wled-segment"
+plugin_package = "octoprint_wled"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
