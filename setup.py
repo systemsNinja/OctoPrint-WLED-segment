@@ -90,7 +90,7 @@ setup_parameters = octoprint_setuptools.create_plugin_setup_parameters(
 
 setup_parameters["entry_points"] = {
     'octoprint.plugin': [
-        'wled-segment = octoprint_wled_segment:WLEDPlugin',
+        'wled = octoprint_wled:WLEDPlugin',
     ],
 }
 
