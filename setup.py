@@ -31,7 +31,7 @@ plugin_cmdclass = versioneer.get_cmdclass()
 plugin_description = """Connect and control your WLED devices through OctoPrint withSegment control"""
 
 # The plugin's author. Can be overwritten within OctoPrint's internal data via __plugin_author__ in the plugin module
-plugin_author = "Charlie Powell"
+plugin_author = "Charlie Powell updated my Martin Kollek"
 
 # The plugin's author's mail address.
 plugin_author_email = "ewwwbananas@gmail.com"
@@ -88,16 +88,19 @@ setup_parameters = octoprint_setuptools.create_plugin_setup_parameters(
     cmdclass=plugin_cmdclass,
 )
 
+setup_parameters["entry_points"] = {
+    'octoprint.plugin': [
+        'wled-segment = octoprint_wled_segment:WLEDPlugin',
+    ],
+}
+
+
 if len(additional_setup_parameters):
     from octoprint.util import dict_merge
 
     setup_parameters = dict_merge(setup_parameters, additional_setup_parameters)
 
-entry_points={
-    'octoprint.plugin': [
-        'wled-segment = octoprint_wled_segment:WLEDPlugin',  # Point to the correct class
-    ],
-},
+
 
 
 setup(**setup_parameters)
