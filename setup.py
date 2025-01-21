@@ -93,4 +93,11 @@ if len(additional_setup_parameters):
 
     setup_parameters = dict_merge(setup_parameters, additional_setup_parameters)
 
+entry_points={
+    'octoprint.plugin': [
+        'wled-segment = octoprint_wled_segment:WLEDPlugin',  # Point to the correct class
+    ],
+},
+
+
 setup(**setup_parameters)
