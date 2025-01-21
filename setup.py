@@ -20,7 +20,7 @@ plugin_package = "octoprint_wled"
 
 # The plugin's human readable name. Can be overwritten within OctoPrint's internal data via __plugin_name__ in the
 # plugin module
-plugin_name = "OctoPrint-WLED-segment"
+plugin_name = "OctoPrint-WLED"
 
 # The plugin's version. Can be overwritten within OctoPrint's internal data via __plugin_version__ in the plugin module
 plugin_version = versioneer.get_version()
